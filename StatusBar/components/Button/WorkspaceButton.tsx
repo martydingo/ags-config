@@ -26,7 +26,8 @@ function WorkspaceLabel({ ws }: { ws: AstalHyprland.Workspace }) {
             {
                 bind(hyprServ, "clients").as((clientArr: AstalHyprland.Client[]) => clientArr
                     .filter((client: AstalHyprland.Client) => client.workspace.id == ws.id)
-                    .map((wsClient: AstalHyprland.Client) => <image pixelSize={-1} iconName={discernIcon(wsClient)} />)
+                    .reverse()
+                    .map((wsClient: AstalHyprland.Client) => <image cssClasses={["WorkspaceButton_ClientLabel"]} pixelSize={-1} iconName={discernIcon(wsClient)} />)
                 )
             }
         </box>
@@ -40,7 +41,7 @@ export default function WorkspaceButton({ ws }: { ws: AstalHyprland.Workspace })
     return (
         <button css_classes={bind(hyprServ, "focusedWorkspace").as((activeWs) => activeWs.id == ws.id && ["active", "WorkspaceButton_Button"] || ["WorkspaceButton_Button"])} onClicked={() => { ws.focus() }}>
             <box>
-                <label>{ws.name}</label>
+                <label cssClasses={["WorkspaceButton_WSLabel"]}>{ws.name}</label>
                 <WorkspaceLabel ws={ws} />
             </box>
         </button>

@@ -8,7 +8,7 @@ function launchExpo() {
 export default function WorkspaceOverviewButton() {
 
     return (
-        <button onClicked={() => launchExpo()}>
+        <button onClicked={() => launchExpo()} cssClasses={["WorkspaceOverview_Button"]}>
             <image iconName="start-here" />
         </button>
     )

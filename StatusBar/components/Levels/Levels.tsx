@@ -11,10 +11,8 @@ function handleCavaLevelsUpdate(cavaLevels: Variable<number[]>) {
 
 function CavaLevelBar({ cavaLevel, invert = false }: { cavaLevel: number, invert?: boolean }) {
     const cavaServ = AstalCava.get_default()
-    let x = LevelBar()
     return (
         <levelbar
-
             value={cavaLevel}
             maxValue={1.5}
             widthRequest={100}
@@ -34,14 +32,14 @@ function MprisMetadata() {
     )
 }
 
-export default function Levels() {
+export default function Levels({ channel }: { channel: number }) {
     const cavaServ = AstalCava.get_default()
     // console.log(barHeight)
-    cavaServ?.set_bars(14)
+    cavaServ?.set_bars(10)
     cavaServ?.set_channels(2)
     cavaServ?.set_stereo(true)
     cavaServ?.set_framerate(60)
-    cavaServ?.set_samplerate(192000)
+    cavaServ?.set_samplerate(96000)
     cavaServ?.set_autosens(true)
 
     const cavaChannelArray = Array.from(Array(cavaServ!.channels).keys())
@@ -55,38 +53,39 @@ export default function Levels() {
     return (
         <box spacing={24} css_classes={["LevelsBox"]} valign={Gtk.Align.CENTER}>
             {cavaChannelArray.map((channelIndex) =>
-                <box css_classes={["LevelsChannelBox", `LevelsChannelBox_${(channelIndex + 1).toString()}`]}>
-                    {(channelIndex == 1) && <label halign={Gtk.Align.CENTER} justify={Gtk.Justification.CENTER}>R</label>}
-                    <box vertical>
-                        {/* {cavaLevels().as(cavaLevelArr => cavaLevelArr.map((cavaLevel: number) => <label>{cavaLevel.toString()}</label>))} */}
-                        {channelIndex == 0 &&
-                            cavaLevels().as(cavaLevelArr => cavaLevelArr.slice(channelIndex * (cavaBars / cavaChannels), (cavaBars / cavaChannels) * (channelIndex + 1)).map((cavaChannelLevel: number, index: number) =>
-                            (
-                                <box>
-                                    <CavaLevelBar cavaLevel={cavaChannelLevel} invert />
-                                </box>
+                channelIndex == channel && (
+                    <box css_classes={["LevelsChannelBox", `LevelsChannelBox_${(channelIndex + 1).toString()}`]}>
+                        {(channelIndex == 1) && <label halign={Gtk.Align.CENTER} justify={Gtk.Justification.CENTER}>R</label>}
+                        <box vertical>
+                            {/* {cavaLevels().as(cavaLevelArr => cavaLevelArr.map((cavaLevel: number) => <label>{cavaLevel.toString()}</label>))} */}
+                            {channelIndex == 0 &&
+                                cavaLevels().as(cavaLevelArr => cavaLevelArr.slice(channelIndex * (cavaBars / cavaChannels), (cavaBars / cavaChannels) * (channelIndex + 1)).map((cavaChannelLevel: number, index: number) =>
+                                (
+                                    <box>
+                                        <CavaLevelBar cavaLevel={cavaChannelLevel} invert />
+                                    </box>
 
-                            )
-                            ))
+                                )
+                                ))
 
 
-                            ||
-                            cavaLevels().as(cavaLevelArr => cavaLevelArr.slice(channelIndex * (cavaBars / cavaChannels), (cavaBars / cavaChannels) * (channelIndex + 1)).map((cavaChannelLevel: number, index: number) =>
-                            (
-                                <box>
-                                    <CavaLevelBar cavaLevel={cavaChannelLevel} />
-                                </box>
+                                ||
+                                cavaLevels().as(cavaLevelArr => cavaLevelArr.slice(channelIndex * (cavaBars / cavaChannels), (cavaBars / cavaChannels) * (channelIndex + 1)).map((cavaChannelLevel: number, index: number) =>
+                                (
+                                    <box>
+                                        <CavaLevelBar cavaLevel={cavaChannelLevel} />
+                                    </box>
 
-                            )
-                            ))
-                        }
+                                )
+                                ))
+                            }
 
+                        </box>
+
+                        {channelIndex == 0 && <label halign={Gtk.Align.CENTER} justify={Gtk.Justification.CENTER}>L</label>}
                     </box>
 
-                    {channelIndex == 0 && <label halign={Gtk.Align.CENTER} justify={Gtk.Justification.CENTER}>L</label>}
-                </box>
-
-            )}
+                ))}
         </box>
     )
 }

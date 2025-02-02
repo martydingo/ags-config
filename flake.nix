@@ -10,17 +10,11 @@
     };
   };
 
-  outputs =
-    { self
-    , nixpkgs
-    , ags
-    ,
-    }:
+  outputs = { self, nixpkgs, ags, }:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
-    in
-    {
+    in {
       devShells.${system} = {
         default = pkgs.mkShell {
           buildInputs = [

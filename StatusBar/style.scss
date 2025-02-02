@@ -1,80 +1,208 @@
 @use "sass:color";
-/* Gruvbox Material */
-$bg_dim: #1b1b1b;
-$bg0: #282828;
-$bg1: #32302f;
-$bg2: #32302f;
-$bg3: #45403d;
-$bg4: #45403d;
-$bg5: #5a524c;
-$bg_statusline1: #32302f;
-$bg_statusline2: #3a3735;
-$bg_statusline3: #504945;
-$bg_diff_green: #34381b;
-$bg_visual_green: #3b4439;
-$bg_diff_red: #402120;
-$bg_visual_red: #4c3432;
-$bg_diff_blue: #0e363e;
-$bg_visual_blue: #374141;
-$bg_visual_yellow: #4f422e;
-$bg_current_word: #3c3836;
-$fg0: #d4be98;
-$fg1: #ddc7a1;
-$red: #ea6962;
-$orange: #e78a4e;
-$yellow: #d8a657;
-$green: #a9b665;
-$aqua: #89b482;
-$blue: #7daea3;
-$purple: #d3869b;
-$bg_red: #ea6962;
-$bg_green: #a9b665;
-$bg_yellow: #d8a657;
-$grey0: #7c6f64;
-$grey1: #928374;
-$grey2: #a89984;
+
+$background1: #171c28;
+$background1_rgb: rgb(23, 28, 40);
+$background2: #1d2433;
+$background2_rgb: rgb(29, 36, 51);
+$background3: #2f3b54;
+$background4: #6679a4;
+$background5: #8695b7;
+
+$accent: #ffcc66;
+
+$red: #ef6b73;
+$orange: #ffae57;
+$yellow: #ffd580;
+$green: #bae67e;
+$aqua: #5ccfe6;
+$blue: #7099db;
+$purple: #c3a6ff;
+$pink: #f9cff2;
+$white: #d7dce2;
+$grey: #a2aabc;
+
+$background_1_neumorphic_box_shadow: 2px 2px 6px #0b0e14, -2px -2px 6px #232a3c;
+$background_1_neumorphic_box_shadow_inset: inset 2px 2px 6px #0b0e14,
+    inset -2px -2px 6px #232a3c;
+$background_2_neumorphic_box_shadow: 2px 2px 6px #0e1219, -2px -2px 6px #2c364d;
+$background_2_neumorphic_box_shadow_inset: inset 2px 2px 6px #0e1219,
+    inset -2px -2px 6px #2c364d;
+$background_3_neumorphic_box_shadow: 2px 2px 6px #171d29, -2px -2px 6px #47597f;
+$background_3_neumorphic_box_shadow_inset: inset 2px 2px 6px #171d29,
+    inset -2px -2px 6px #47597f;
+$background_4_neumorphic_box_shadow: 2px 2px 6px #323b50, -2px -2px 6px #9ab7f8;
+$background_4_neumorphic_box_shadow_inset: inset 2px 2px 6px #323b50,
+    inset -2px -2px 6px #9ab7f8;
+$background_5_neumorphic_box_shadow: 2px 2px 6px #42495a, -2px -2px 6px #cae1ff;
+$background_5_neumorphic_box_shadow_inset: inset 2px 2px 6px #42495a,
+    inset -2px -2px 6px #cae1ff;
+
+$accent_neumorphic_box_shadow: 2px 2px 6px #7d6432, -2px -2px 6px #ffff9a;
+$accent_neumorphic_box_shadow_inset: inset 2px 2px 6px #7d6432,
+    inset -2px -2px 6px #ffff9a;
+
+$red_neumorphic_box_shadow: 2px 2px 6px #753438, -2px -2px 6px #ffa2ae;
+$red_neumorphic_box_shadow_inset: inset 2px 2px 6px #753438,
+    inset -2px -2px 6px #ffa2ae;
+
+$orange_neumorphic_box_shadow: 2px 2px 6px #7d552b, -2px -2px 6px #ffff83;
+$orange_neumorphic_box_shadow_inset: inset 2px 2px 6px #7d552b,
+    inset -2px -2px 6px #ffff83;
+
+$yellow_neumorphic_box_shadow: 2px 2px 6px #7d683f, -2px -2px 6px #ffffc1;
+$yellow_neumorphic_box_shadow_inset: inset 2px 2px 6px #7d683f,
+    inset -2px -2px 6px #ffffc1;
+
+$green_neumorphic_box_shadow: 2px 2px 6px #5b713e, -2px -2px 6px #ffffbe;
+$green_neumorphic_box_shadow_inset: inset 2px 2px 6px #5b713e,
+    inset -2px -2px 6px #ffffbe;
+
+$aqua_neumorphic_box_shadow: 2px 2px 6px #2d6571, -2px -2px 6px #8bffff;
+$aqua_neumorphic_box_shadow_inset: inset 2px 2px 6px #2d6571,
+    inset -2px -2px 6px #8bffff;
+
+$blue_neumorphic_box_shadow: 2px 2px 6px #374b6b, -2px -2px 6px #a9e7ff;
+$blue_neumorphic_box_shadow_inset: inset 2px 2px 6px #374b6b,
+    inset -2px -2px 6px #a9e7ff;
+
+$purple_neumorphic_box_shadow: 2px 2px 6px #60517d, -2px -2px 6px #fffbff;
+$purple_neumorphic_box_shadow_inset: inset 2px 2px 6px #60517d,
+    inset -2px -2px 6px #fffbff;
+
+$pink_neumorphic_box_shadow: 2px 2px 6px #7a6577, -2px -2px 6px #ffffff;
+$pink_neumorphic_box_shadow_inset: inset 2px 2px 6px #7a6577,
+    inset -2px -2px 6px #ffffff;
+
+$white_neumorphic_box_shadow: 2px 2px 6px #696c6f, -2px -2px 6px #ffffff;
+$white_neumorphic_box_shadow_inset: inset 2px 2px 6px #696c6f,
+    inset -2px -2px 6px #ffffff;
+
+$grey_neumorphic_box_shadow: 2px 2px 6px #4f535c, -2px -2px 6px #f5ffff;
+$grey_neumorphic_box_shadow_inset: inset 2px 2px 6px #4f535c,
+    inset -2px -2px 6px #f5ffff;
 
 
-* {
-    border-radius: unset;
-}
 
 .StatusBar {
     background: transparent;
-    color: $fg0;
-    font-family: "Maple Mono NF";
+    color: $grey;
+    // font-family: "Maple Mono NF";
+    font-family: "Bai Jamjuree";
+    // font-family: "Titillium Web";
 
-    >centerbox {
-        background: $bg0;
+
+    button {
+        border-radius: 6px;
+        padding: 0px 6px;
+        margin: 3px 6px;
+        background-color: $background2;
+        box-shadow: $background_2_neumorphic_box_shadow;
+        border: none;
     }
 
-    .Workspaces {
-        .WorkspaceButton {
-            background-color: red;
+    button:hover {
+        color: $white;
+        background-color: $background3;
+        box-shadow: $background_3_neumorphic_box_shadow;
+    }
+
+    button:checked {
+        background-color: $background3;
+        box-shadow: $background_3_neumorphic_box_shadow_inset;
+        color: $grey
+    }
+
+    .Workspaces_Box {
+        background-color: color.adjust($background1, $alpha: -0.34);
+        padding: 3px 6px;
+        border-radius: 6px;
+
+        .WorkspaceOverview_Button {
+            background-color: $background2;
+
+        }
+
+        .WorkspaceButtons_Container {
+
+            .WorkspaceButton_Button {
+                background-color: $background2;
+                box-shadow: $background_2_neumorphic_box_shadow;
+                border: none;
+
+
+                .WorkspaceButton_WSLabel {
+                    font-size: 0.8em;
+                    font-weight: 700;
+                    margin-right: 6px;
+                    color: $grey;
+                }
+
+                .WorkspaceButton_ClientLabel {
+                    margin-right: 3px;
+                }
+
+                color: $grey;
+            }
+
+            .WorkspaceButton_Button.active {
+                background-color: $background3;
+                box-shadow: $background_3_neumorphic_box_shadow_inset;
+                border: none;
+
+                .WorkspaceButton_WSLabel {
+                    color: $white
+                }
+
+                color: $grey;
+            }
+        }
+    }
+
+    .Notifications_MenuButton {
+        .Notifications_Popover {
+            .Notifications_Popover_Scrollable {
+                .Notifications_Popover_Box {
+                    .Notifications_Popover_NotificationBox {
+                        .Notifications_Popover_NotificationTitleBox {
+                            // background-color: red;
+
+                            .Notifications_Popover_NotificationTitle {
+                                font-size: 1.33em;
+                                line-height: 2em;
+                            }
+
+
+                        }
+
+                        .Notifications_Popover_NotificationBody {}
+                    }
+
+                }
+            }
         }
     }
 
     .Meta_Box {
-        background-color: transparent;
+        background-color: color.adjust($background1, $alpha: -0.66);
 
 
         .LevelsBox {
 
             .LevelsChannelBox {
-                background-color: color.adjust($bg1, $alpha: -0.66);
+                background-color: color.adjust($background1, $alpha: -0.66);
                 font-size: 1.125em;
                 font-weight: 900;
-                border-radius: 1em;
+                border-radius: 0em;
 
                 label {
-                    margin: 0px 8px;
-                    color: $grey2
+                    margin: 0px 6px;
+                    color: $grey
                 }
 
                 levelbar {
 
                     trough {
-                        border-radius: 3px;
+                        border-radius: 0px;
 
                         block.filled {
                             background-color: $red;
@@ -97,7 +225,7 @@ $grey2: #a89984;
                         }
 
                         block.empty {
-                            background-color: color.adjust($bg_dim, $alpha: -0.5);
+                            background-color: color.adjust($background1, $alpha: -0.34);
                             border: 0px;
                         }
                     }
@@ -105,6 +233,101 @@ $grey2: #a89984;
             }
 
             // background-color: red;
+        }
+
+        .MprisMeta_Box {
+            background-color: transparent;
+
+            >menubutton {
+                margin: 0px 3px;
+            }
+
+
+            // padding-left: 6px;
+            // padding-right: 6px;
+            padding: 0px 6px;
+
+            .MprisMeta_Overlay_MediaArt_Static {
+                min-width: 512px;
+                min-height: 126px;
+                border-radius: 9px;
+                margin-right: .6rem;
+                background-size: cover;
+                background-position: center;
+                color: $grey;
+
+                separator {
+                    background-color: $accent;
+                }
+
+            }
+
+            .MprisMeta_Overlay_MediaArt_Shader {
+                background: linear-gradient(90deg, rgba(23, 28, 40, 0.9) 80%, rgba(23, 28, 40, 0.3) 100%);
+                min-width: 512px;
+                min-height: 126px;
+                padding: 0px 12px;
+
+                .MprisMeta_Overlay_Container {
+                    margin-top: 16px;
+
+                    .MprisMeta_Overlay_Label_Title {
+                        color: $white;
+                        font-size: 2em;
+                        font-family: "Titillium Web";
+                    }
+
+                    .MprisMeta_Overlay_Label_Artist {}
+
+                    .MprisMeta_Overlay_Label_Album {
+                        font-style: italic;
+                    }
+
+                    .MprisMeta_Overlay_MediaControls {
+                        margin: 12px;
+                    }
+                }
+            }
+
+            .MprisMeta_Stack {
+                padding: 0px 12px;
+
+                .MprisMeta_Label {
+                    font-family: "Titillium Web";
+                    font-family: "Bai Jamjuree";
+                    font-weight: 600;
+                }
+
+            }
+        }
+    }
+
+    .Tray_Box {
+        background-color: color.adjust($background1, $alpha: -0.34);
+        padding: 3px 3px;
+        border-radius: 6px;
+
+        .SystemTray_Box {
+
+            button {
+                border-radius: 6px;
+                padding: 0px 6px;
+                margin: 3px 6px;
+                background-color: $background2;
+                box-shadow: $background_2_neumorphic_box_shadow;
+                border: none;
+            }
+
+            button:hover {
+                color: $accent;
+                background-color: $background3;
+                box-shadow: $background_3_neumorphic_box_shadow;
+            }
+
+            button:checked {
+                background-color: $background3;
+                box-shadow: $background_3_neumorphic_box_shadow_inset;
+            }
         }
     }
 

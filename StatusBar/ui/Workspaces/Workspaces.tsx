@@ -8,9 +8,9 @@ export default function Workspaces() {
     const hyprServ = AstalHyprland.get_default()
 
     return (
-        <box>
+        <box cssClasses={["Workspaces_Box"]}>
             <WorkspaceOverviewButton />
-            <box>
+            <box cssClasses={["WorkspaceButtons_Container"]}>
 
                 {
                     bind(hyprServ, "workspaces")

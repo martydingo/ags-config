@@ -6,8 +6,8 @@ export default function Clock() {
     const time = Variable("").poll(1000, "date '+%I:%M %p'")
 
     return (
-        <menubutton>
-            <label>
+        <menubutton cssClasses={["Clock_MenuButton"]}>
+            <label cssClasses={["Clock_Label"]}>
                 {time()}
             </label>
             <popover>
